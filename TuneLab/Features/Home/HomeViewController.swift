@@ -34,7 +34,8 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Navegar para tela de detalhes")
+        let detailViewController = DetailViewController(playlist: viewModel.loadCurrentPlaylist(index: indexPath.row))
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
